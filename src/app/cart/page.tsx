@@ -92,6 +92,8 @@ export default function CartPage() {
   }
 
   const clearCart = async () => {
+    if (!user) return
+    
     try {
       const { error } = await supabase
         .from('cart_items')
