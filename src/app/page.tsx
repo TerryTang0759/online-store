@@ -21,7 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchProducts()
-  }, [searchQuery, selectedCategory])
+  }, [searchQuery, selectedCategory, fetchProducts])
 
   const fetchProducts = async () => {
     setLoading(true)

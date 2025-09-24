@@ -14,13 +14,15 @@ import Link from 'next/link'
 export default function CartPage() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(true)
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<{
+    id: string
+    email?: string
+    user_metadata?: {
+      full_name?: string
+    }
+  } | null>(null)
 
   const supabase = createClient()
-
-  useEffect(() => {
-    fetchUserAndCart()
-  }, [])
 
   const fetchUserAndCart = async () => {
     try {
@@ -45,6 +47,10 @@ export default function CartPage() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    fetchUserAndCart()
+  }, [fetchUserAndCart])
 
   const updateQuantity = async (itemId: string, newQuantity: number) => {
     if (newQuantity <= 0) {

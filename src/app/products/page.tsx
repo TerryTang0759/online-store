@@ -23,7 +23,7 @@ export default function ProductsPage() {
 
   useEffect(() => {
     fetchProducts()
-  }, [searchQuery, selectedCategory, sortBy, sortOrder])
+  }, [searchQuery, selectedCategory, sortBy, sortOrder, fetchProducts])
 
   const fetchProducts = async () => {
     setLoading(true)
