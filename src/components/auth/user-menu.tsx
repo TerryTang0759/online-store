@@ -7,7 +7,13 @@ import { User, LogOut, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 
 interface UserMenuProps {
-  user: any
+  user: {
+    id: string
+    email?: string
+    user_metadata?: {
+      full_name?: string
+    }
+  } | null
 }
 
 export function UserMenu({ user }: UserMenuProps) {

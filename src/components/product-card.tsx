@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { ShoppingCart } from 'lucide-react'
 import { Product } from '@/types'
 import { formatPrice } from '@/lib/utils'
-import { createClient } from '@/lib/supabase'
 import Image from 'next/image'
 
 interface ProductCardProps {

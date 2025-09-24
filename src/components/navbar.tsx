@@ -10,7 +10,13 @@ import { AuthForm } from '@/components/auth/auth-form'
 import { Search, ShoppingCart, Menu, X, Store } from 'lucide-react'
 
 export function Navbar() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<{
+    id: string
+    email?: string
+    user_metadata?: {
+      full_name?: string
+    }
+  } | null>(null)
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -51,7 +57,7 @@ export function Navbar() {
     )
 
     return () => subscription.unsubscribe()
-  }, [supabase.auth])
+  }, [])
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
