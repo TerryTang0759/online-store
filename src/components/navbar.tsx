@@ -111,16 +111,16 @@ export function Navbar() {
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
               {/* Cart */}
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="/cart" className="relative">
+              <Link href="/cart" className="relative">
+                <Button variant="ghost" size="icon">
                   <ShoppingCart className="h-5 w-5" />
                   {cartCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                       {cartCount}
                     </span>
                   )}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
 
               {/* User Menu or Auth Buttons */}
               {user ? (

@@ -19,10 +19,6 @@ export default function Home() {
 
   const supabase = createClient()
 
-  useEffect(() => {
-    fetchProducts()
-  }, [searchQuery, selectedCategory, fetchProducts])
-
   const fetchProducts = async () => {
     setLoading(true)
     try {
@@ -56,6 +52,10 @@ export default function Home() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    fetchProducts()
+  }, [searchQuery, selectedCategory, fetchProducts])
 
   const handleAddToCart = async (productId: string) => {
     try {
@@ -95,11 +95,11 @@ export default function Home() {
             发现优质商品，享受便捷购物体验
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link href="/products">
+            <Link href="/products">
+              <Button size="lg">
                 浏览商品
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="bg-white text-blue-600 hover:bg-gray-100">
               了解更多
             </Button>

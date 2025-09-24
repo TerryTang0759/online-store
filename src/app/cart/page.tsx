@@ -150,9 +150,9 @@ export default function CartPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button asChild>
-                <Link href="/">去登录</Link>
-              </Button>
+              <Link href="/">
+                <Button>去登录</Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -180,9 +180,9 @@ export default function CartPage() {
               <ShoppingBag className="h-16 w-16 mx-auto text-gray-400 mb-4" />
               <h2 className="text-xl font-semibold mb-2">购物车是空的</h2>
               <p className="text-gray-500 mb-6">添加一些商品开始购物吧！</p>
-              <Button asChild>
-                <Link href="/">继续购物</Link>
-              </Button>
+              <Link href="/">
+                <Button>继续购物</Button>
+              </Link>
             </CardContent>
           </Card>
         ) : (
@@ -282,9 +282,9 @@ export default function CartPage() {
                     去结算
                   </Button>
                   
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="/">继续购物</Link>
-                  </Button>
+                  <Link href="/" className="w-full">
+                    <Button variant="outline" className="w-full">继续购物</Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>

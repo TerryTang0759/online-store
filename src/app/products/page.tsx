@@ -21,10 +21,6 @@ export default function ProductsPage() {
 
   const supabase = createClient()
 
-  useEffect(() => {
-    fetchProducts()
-  }, [searchQuery, selectedCategory, sortBy, sortOrder, fetchProducts])
-
   const fetchProducts = async () => {
     setLoading(true)
     try {
@@ -61,6 +57,10 @@ export default function ProductsPage() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    fetchProducts()
+  }, [searchQuery, selectedCategory, sortBy, sortOrder, fetchProducts])
 
   const handleAddToCart = async (productId: string) => {
     try {
